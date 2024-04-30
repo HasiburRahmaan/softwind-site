@@ -11,7 +11,7 @@ import MenuLines from "@/src/components/home/MenuLines";
 const page = () => {
   return (
     <div className="">
-      <span className="w-[100px] fixed right-0 top-1/2 transform -translate-y-1/2 bg-black/50">
+      <span className="w-[100px] fixed right-0 top-1/2 transform -translate-y-1/2 ">
         <MenuLines />
       </span>
       <span id="home">

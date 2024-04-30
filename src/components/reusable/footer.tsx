@@ -12,34 +12,31 @@ const Footer = () => {
       </div>
 
       <div>
-        <FooterTitle title="Contact Us" />
+        <FooterTitle title="Contact Us" className="mb-10" />
 
-        <FooterContent content="">
-          <p>info@softwindtech.com</p>
-        </FooterContent>
-
-        <FooterContent content="">
-          <a href="tel:+8801730433711">01730-433711</a>
-        </FooterContent>
-
-        <FooterContent content="">
-          <address>House: 73, Road-13/A, Block: D, Banani, Dhaka-1213, Bangladesh</address>
-        </FooterContent>
+        {contactInformations.map((item, index) => (
+          <FooterContent key={index} className="mb-6">
+            {item.text}
+          </FooterContent>
+        ))}
       </div>
 
       <div>
-        <FooterTitle title="Our Services" />
-        <FooterContent>Home</FooterContent>
-        <FooterContent>About Us</FooterContent>
-        <FooterContent>Services</FooterContent>
-        <FooterContent>Portfolio</FooterContent>
+        <FooterTitle title="Our Services" className="mb-10" />
+        {services.map((item, index) => (
+          <FooterContent key={index} className="mb-6">
+            {item.text}
+          </FooterContent>
+        ))}
       </div>
 
       <div>
-        <FooterTitle title="Quick Link" />
-        <FooterContent>Contact</FooterContent>
-        <FooterContent>Career</FooterContent>
-        <FooterContent>Privacy Policy</FooterContent>
+        <FooterTitle title="Quick Link" className="mb-10" />
+        {quickLinks.map((item, index) => (
+          <FooterContent key={index} className="mb-6">
+            {item.text}
+          </FooterContent>
+        ))}
       </div>
     </div>
   );
@@ -47,10 +44,27 @@ const Footer = () => {
 
 export default Footer;
 
-const FooterTitle = ({ title }: any) => {
-  return <p className="text-[#001343] font-bold text-[24px] leading-[34px]">{title}</p>;
+let contactInformations = [
+  { text: <p>info@softwindtech.com</p> },
+  { text: <a href="tel:+8801730433711">01730-433711</a> },
+  { text: <address>House: 73, Road-13/A, Block: D, Banani, Dhaka-1213, Bangladesh</address> },
+];
+let quickLinks = [
+  { text: "Contact", href: "" },
+  { text: "Career", href: "" },
+  { text: "Privacy Policy", href: "" },
+];
+let services = [
+  { text: "Home", href: "" },
+  { text: "About Us", href: "" },
+  { text: "Services", href: "" },
+  { text: "Portfolio", href: "" },
+];
+
+const FooterTitle = ({ title, className }: any) => {
+  return <p className={`text-[#001343] font-bold text-[24px] leading-[34px] ${className}`}>{title}</p>;
 };
 
-function FooterContent({ children }: any) {
-  return <div className="text-[18px] leading-[18px]">{children}</div>;
+function FooterContent({ children, className }: any) {
+  return <div className={`text-[18px] leading-[18px] ${className}`}>{children}</div>;
 }

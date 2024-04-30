@@ -5,10 +5,10 @@ import HoverLine from "../reusable/hoverLine";
 
 export default function MenuLines() {
   let data = [
-    { text: "Home", href: "home", colorVariant: "#4A0404" },
-    { text: "About", href: "about", colorVariant: "#4A0404" },
-    { text: "Services", href: "services", colorVariant: "#4A0404" },
-    { text: "Glance", href: "glance", colorVariant: "#4A0404" },
+    { text: "Home", href: "home", colorVariant: "white" },
+    { text: "About", href: "about", colorVariant: "red" },
+    { text: "Services", href: "services", colorVariant: "red" },
+    { text: "Glance", href: "glance", colorVariant: "red" },
   ];
 
   const [activeSection, setActiveSection] = useState("home");
